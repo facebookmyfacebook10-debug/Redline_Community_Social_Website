@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Redline Outdoor & Power community — product updates, outdoor inspiration and customer conversations.">
+<title>Redline Community | Outdoor & Power</title><link rel="icon" href="assets/icons/favicon.svg"><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home" aria-label="Redline Community home"><span class="brand-mark">R</span><span class="brand-copy"><b>REDLINE</b><small>COMMUNITY</small></span></a>
+  <form class="search" id="searchForm"><span>⌕</span><input id="searchInput" placeholder="Search posts, products and people" aria-label="Search"></form>
+  <nav class="topnav" aria-label="Main navigation">
+    <button class="nav-btn selected" data-view="home" title="Home">⌂<span>Home</span></button>
+    <button class="nav-btn" data-view="friends" title="Friends">♧<span>Friends</span></button>
+    <button class="nav-btn" data-view="videos" title="Videos">▷<span>Videos</span></button>
+    <button class="nav-btn" data-view="groups" title="Groups">◎<span>Groups</span></button>
+    <button class="nav-btn" data-view="marketplace" title="Marketplace">▣<span>Shop</span></button>
+  </nav>
+  <div class="header-actions"><button class="circle-btn" id="messagesBtn" aria-label="Messages">✉</button><button class="circle-btn notification-button" id="notificationsBtn" aria-label="Notifications">♧<i></i></button><button class="profile-mini" id="profileBtn" aria-label="Profile">G</button></div>
+</header>
+<div class="mobile-tabs"><button class="selected" data-view="home">⌂</button><button data-view="friends">♧</button><button data-view="groups">◎</button><button data-view="marketplace">▣</button><button id="mobileMenu">☰</button></div>
+<main class="layout" id="home">
+  <aside class="left-sidebar">
+    <button class="user-shortcut" id="leftProfile"><span class="avatar red-avatar">G</span><span><b id="sideUserName">Guest Visitor</b><small>View profile</small></span></button>
+    <div class="side-links">
+      <button class="side-link active" data-view="home"><span class="side-icon blue">⌂</span> News Feed</button>
+      <button class="side-link" data-view="friends"><span class="side-icon purple">♧</span> Friends</button>
+      <button class="side-link" data-view="groups"><span class="side-icon orange">◎</span> Groups</button>
+      <button class="side-link" data-view="saved"><span class="side-icon gold">▣</span> Saved posts</button>
+      <button class="side-link" data-view="videos"><span class="side-icon pink">▷</span> Videos</button>
+      <button class="side-link" data-view="marketplace"><span class="side-icon green">▤</span> Marketplace</button>
+      <button class="side-link" data-view="events"><span class="side-icon blue">▦</span> Outdoor events</button>
+    </div>
+    <div class="sidebar-divider"></div><div class="sidebar-heading">YOUR SHORTCUTS</div>
+    <a class="shortcut" href="#shop"><span class="shortcut-img">⛺</span><span>Camping & Outdoor</span></a>
+    <a class="shortcut" href="#shop"><span class="shortcut-img">⚡</span><span>Portable Power</span></a>
+    <a class="shortcut" href="#shop"><span class="shortcut-img">❄</span><span>Coolers & Travel</span></a>
+    <div class="side-note"><b>Redline Outdoor & Power</b><p>Outdoor gear, portable power and useful products for your next adventure.</p><a href="#about">About this community →</a></div>
+  </aside>
+
+  <section class="feed-column">
+    <div class="view-heading" id="viewHeading"><div><span class="eyebrow">REDLINE OUTDOOR & POWER</span><h1>Community feed</h1><p>Product updates, outdoor ideas and conversations.</p></div><span class="status-pill"><i></i> Community</span></div>
+    <div class="stories" aria-label="Community highlights">
+      <button class="story create-story" id="storyCreate"><span class="story-plus">＋</span><b>Create post</b><small>Share an update</small></button>
+      <button class="story story-one" data-story="Outdoor inspiration"><span class="story-avatar">⛺</span><b>Outdoor ideas</b></button>
+      <button class="story story-two" data-story="Product spotlight"><span class="story-avatar">⚡</span><b>Power picks</b></button>
+      <button class="story story-three" data-story="Travel essentials"><span class="story-avatar">🎒</span><b>Travel gear</b></button>
+    </div>
+    <div class="composer card" id="composer">
+      <div class="composer-top"><span class="avatar red-avatar" id="composerAvatar">G</span><button class="composer-prompt" id="openComposer">What's on your mind, Guest Visitor?</button></div>
+      <div class="composer-tools"><button id="addPhoto">▧ <span>Photo</span></button><button id="feelingBtn">☺ <span>Feeling / activity</span></button><button id="createPostBtn">＋ <span>Create post</span></button></div>
+      <div class="composer-expanded" id="composerExpanded" hidden><textarea id="postText" placeholder="Share an outdoor tip, ask a question, or post an update..." rows="3"></textarea><div class="composer-bottom"><label class="upload-label">▧ Add photo <input type="file" id="postImage" accept="image/*"></label><span id="uploadName">No photo selected</span><button class="btn-primary" id="publishPost">Publish post</button></div></div>
+    </div>
+    <div class="feed-controls"><span><b id="feedLabel">Latest updates</b><small>Posts from Redline and the community</small></span><select id="sortSelect" aria-label="Feed sorting"><option value="latest">Latest</option><option value="popular">Most liked</option></select></div>
+    <div id="feedPosts"></div>
+    <div class="end-feed"><span>✦</span><b>You're all caught up</b><p>Check back for more outdoor inspiration and product updates.</p></div>
+  </section>
+
+  <aside class="right-sidebar">
+    <div class="right-card business-card">
+      <div class="cover-mini"></div><div class="business-card-body"><div class="business-logo">R</div><span class="verified">● BUSINESS COMMUNITY</span><h2>Redline Outdoor & Power</h2><p>Outdoor gear, coolers, bags and portable power products.</p><div class="business-meta"><span>⌖ South Africa</span><span>◉ Product enquiries welcome</span></div><a class="btn-primary full" href="#shop">Browse product range <span>→</span></a></div>
+    </div>
+    <div class="right-card"><div class="right-card-heading"><b>Community suggestions</b><button id="refreshSuggestions">•••</button></div>
+      <div class="suggestion"><span class="suggestion-icon">🏕</span><div><b>Camping & Weekend Trips</b><small>Outdoor enthusiasts</small><button class="small-action" data-join="Camping & Weekend Trips">Join group</button></div></div>
+      <div class="suggestion"><span class="suggestion-icon green-bg">⚡</span><div><b>Portable Power Talk</b><small>Power and solar gear</small><button class="small-action" data-join="Portable Power Talk">Join group</button></div></div>
+      <div class="suggestion"><span class="suggestion-icon orange-bg">🎒</span><div><b>Travel Gear Exchange</b><small>Travel tips and essentials</small><button class="small-action" data-join="Travel Gear Exchange">Join group</button></div></div>
+    </div>
+    <div class="right-card"><div class="right-card-heading"><b>Product spotlight</b><a href="#shop">View all</a></div><div class="spotlight"><img src="assets/images/photo-001.jpg" alt="Portable power product"><div><b>Portable Power Station</b><small>Ask for specifications and availability.</small><button class="text-action" data-product="Portable Power Station">Enquire →</button></div></div><div class="spotlight"><img src="assets/images/photo-003.jpg" alt="Outdoor camping chair"><div><b>Folding Camping Chairs</b><small>Explore styles shown in the catalogue.</small><button class="text-action" data-product="Folding Camping Chairs">Enquire →</button></div></div></div>
+    <div class="right-footer"><a href="#about">About</a><a href="#contact">Contact</a><a href="#privacy">Privacy</a><span>© <span id="year"></span> Redline Community</span></div>
+  </aside>
+</main>
+
+<section class="shop-section" id="shop"><div class="section-title"><div><span class="eyebrow">DISCOVER THE RANGE</span><h2>Outdoor & power catalogue</h2><p>Browse products from the supplied Redline catalogue. Confirm current prices, specifications and availability before ordering.</p></div><input id="productSearch" placeholder="Search products..." aria-label="Search products"></div><div class="product-grid" id="productGrid"></div></section>
+<section class="about-section" id="about"><div><span class="eyebrow">ABOUT THE COMMUNITY</span><h2>Gear up for everyday adventures.</h2><p>Redline Community is a social-style space for sharing product updates, outdoor inspiration and questions about the Redline Outdoor & Power range. Browse products and contact the business to confirm details.</p></div><div class="about-stat"><span>⛺</span><b>Outdoor & travel</b><small>Camping, bags and practical gear</small></div><div class="about-stat"><span>⚡</span><b>Power solutions</b><small>Portable power and solar products</small></div></section>
+<section class="contact-section" id="contact"><div><span class="eyebrow">GET IN TOUCH</span><h2>Ask us about a product.</h2><p>Send an enquiry through WhatsApp. Product details and availability will need to be confirmed.</p></div><form id="contactForm"><input id="contactName" placeholder="Your name" required><textarea id="contactMessage" placeholder="What would you like to know?" required></textarea><button class="btn-primary" type="submit">Continue to WhatsApp ↗</button><small>WhatsApp number is loaded from the supplied business website configuration.</small></form></section>
+<footer><b>REDLINE COMMUNITY</b><span>Independent community website concept for Redline Outdoor & Power.</span><span>Not affiliated with or endorsed by Facebook.</span></footer>
+
+<div class="modal-backdrop" id="modalBackdrop" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Close">×</button><span class="eyebrow">YOUR COMMUNITY PROFILE</span><h2 id="modalTitle">Welcome to Redline Community</h2><p>This preview stores demo posts and reactions in this browser only. No account or password is required.</p><label for="displayName">Display name</label><input id="displayName" maxlength="40" placeholder="Enter a display name"><button class="btn-primary full" id="saveProfile">Continue as visitor</button><small>For real user accounts, secure login and multi-user messaging, connect a backend before publishing.</small></section></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="site-config.js"></script><script src="products.js"></script><script src="app.js"></script>
+</body></html>
